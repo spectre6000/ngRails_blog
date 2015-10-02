@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes(user_params)
+    if @post.update_attributes(post_params)
       render json: @post.as_json, status: :ok 
     else
       render json: {post: @post.errors, status: :unprocessable_entity}
@@ -38,11 +38,11 @@ class PostsController < ApplicationController
 
   private
 
-    def user_params
+    def post_params
       params.fetch(:post, {}).permit(:title, :body, :date)
     end
 
-    def get_user
+    def get_post
       @post = Post.find(params[:id])
       render json: {status: :not_found} unless @post
     end
