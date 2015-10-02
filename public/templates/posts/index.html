@@ -1,0 +1,16 @@
+<a href="#/posts/new">New Post</a>
+
+<h3>Posts</h3>
+<table>
+  <tr>
+    <th>Post Title</th>
+    <th>Post Body</th>
+    <th>Post Release Date</th>
+  </tr>
+  <tr ng-hide="posts.length">
+    <td>No posts found. Get writing!</td>
+  </tr>
+  <tr ng-show="posts.length" ng-repeat="post in posts">
+    <td>{{post.title}}</td>
+    <td>{{post.body}}</td>
+    <td>{{post.release_date}}
