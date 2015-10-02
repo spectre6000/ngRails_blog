@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>NgRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html ng-app="myapplication">
+  <head>
+    <title>NgRails Blog</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div class='container' ng-view>
+      <%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>
